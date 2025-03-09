@@ -22,7 +22,7 @@ with open('cookies.txt','r') as f:
     for cookie in coolies_list:
         driver.add_cookie(cookie)
 driver.refresh()
-name = driver.find_element(By.XPATH,'//*[@id="root"]/div[2]/div/div[3]/div/div/div[1]/main/section/div[1]/div/figcaption/div[2]/div/h1')
+# name = driver.find_element(By.XPATH,'//*[@id="root"]/div[2]/div/div[3]/div/div/div[1]/main/section/div[1]/div/figcaption/div[2]/div/h1')
 
 driver.find_element(By.XPATH,'//*[@id="root"]/div[2]/div/div[3]/div/div/div[1]/main/section/div[1]/div/div[5]/div/div[2]/button/div[2]').click()
 time.sleep(5)
@@ -37,7 +37,7 @@ for url,i in zip(urls,range(len(urls))):
     opener = urllib.request.build_opener()
     opener.addheaders = [('Referer', "https://www.pixiv.net/")]
     urllib.request.install_opener(opener)
-    urllib.request.urlretrieve(url,f'img/{name.text}/{i}.jpg')
+    urllib.request.urlretrieve(url,f'img/{i}.jpg')
     print(f'{i}/{len(urls)-1}')
     time.sleep(3)
 
